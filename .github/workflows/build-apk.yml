@@ -21,6 +21,10 @@ jobs:
                   npm install
                   npm run build
 
+            - name: Sync Capacitor Android
+              run: |
+                  npx cap sync android   # این خط فایل‌های گمشده کوردوا و پلاگین‌ها را می‌سازد
+
             - name: Set up JDK 17
               uses: actions/setup-java@v4
               with:
