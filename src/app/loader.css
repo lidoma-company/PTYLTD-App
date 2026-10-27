@@ -1,0 +1,84 @@
+:root {
+    --size: calc(100vw / 5);
+    --neon: GoldenRod;
+    --timer: 1s;
+}
+
+.spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--color-primary-9);
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    animation: animate calc(var(--timer) * 3) linear infinite;
+}
+
+.loader span {
+    position: absolute;
+    inset: calc(var(--size) * 0.1);
+    background: var(--color-primary-9);
+    border-radius: 50%;
+}
+
+div[class*='segment']:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, var(--neon));
+    background-size: calc(var(--size) * 0.5) calc(var(--size) * 0.6);
+    background-repeat: no-repeat;
+    border-top-left-radius: calc(var(--size) * 0.5);
+    border-bottom-left-radius: calc(var(--size) * 0.5);
+}
+
+.segment1 {
+    animation-delay: calc(var(--timer) * -0);
+}
+
+.segment2 {
+    animation-delay: calc(var(--timer) * -1);
+}
+
+.segment3 {
+    animation-delay: calc(var(--timer) * -2);
+}
+
+.loader i {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--size) * 0.1);
+    height: calc(var(--size) * 0.1);
+    background: var(--neon);
+    border-radius: 50%;
+    box-shadow:
+        0 0 calc(var(--size) * 0.1) var(--neon),
+        0 0 calc(var(--size) * 0.2) var(--neon),
+        0 0 calc(var(--size) * 0.3) var(--neon),
+        0 0 calc(var(--size) * 0.4) var(--neon),
+        0 0 calc(var(--size) * 0.5) var(--neon);
+}

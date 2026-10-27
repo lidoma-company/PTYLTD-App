@@ -1,0 +1,13 @@
+.tabs-border input.tab:checked::before {
+    background: var(--color-secondary) !important;
+}
+
+
+:is(.tabs-border .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]), .tabs-border .tab:is(input:checked), .tabs-border .tab:is(label:has(:checked))):before {
+    border: none
+}
+
+.tab-content {
+    box-shadow: 0px 0px 0px 1px #1B1F2326;
+    box-shadow: 0px 1px 3px 0px #00000005;
+}

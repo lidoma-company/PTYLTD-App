@@ -1,0 +1,24 @@
+.package {
+    background: linear-gradient(90deg, #b55400 0%, #e1bb99 50%, #b55400 100%);
+}
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.05) 0%,
+        rgba(255, 215, 0, 0.15) 50%,
+        rgba(255, 215, 0, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.2s infinite linear;
+    filter: blur(8px);
+    opacity: 0.6;
+}
