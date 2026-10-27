@@ -48,6 +48,7 @@
         "zustand": "^5.0.12"
     },
     "devDependencies": {
+        "@capacitor/assets": "^3.0.5",
         "@capacitor/cli": "^8.5.3",
         "@eslint/eslintrc": "^3",
         "@faker-js/faker": "^10.0.0",
@@ -73,9 +74,9 @@
         "typescript": "^5",
         "vitest": "^3.2.4"
     },
-    "msw": {
-        "workerDirectory": [
-            "public"
-        ]
+    "capacitor": {
+        "assets": {
+            "icon": "assets/pty-logo.png"
+        }
     }
 }
