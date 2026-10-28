@@ -40,6 +40,7 @@
         "react-icons": "^5.5.0",
         "react-verification-input": "^4.2.2",
         "reactjs-tiptap-editor": "^0.3.23",
+        "sharp": "^0.35.5",
         "sonner": "^2.0.7",
         "suneditor": "^2.47.8",
         "suneditor-react": "^3.6.1",
@@ -78,5 +79,10 @@
         "assets": {
             "icon": "assets/pty-logo.png"
         }
+    },
+    "allowScripts": {
+        "sharp@0.32.6": true,
+        "sharp@0.34.5": true,
+        "sharp@0.35.5": true
     }
 }
