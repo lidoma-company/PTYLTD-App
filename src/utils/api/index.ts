@@ -106,7 +106,7 @@ const httpService = axios.create({
         Accept: 'application/json',
         'Content-Type': 'multipart/form-data',
     },
-    withCredentials: true,
+    // withCredentials: true,
 });
 
 httpService.interceptors.response.use(
