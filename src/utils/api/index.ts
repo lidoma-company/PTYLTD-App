@@ -97,7 +97,11 @@ import { Schema } from '../types/DTO/schema.interface';
 import { SingleTicket, Ticket } from '../types/DTO/tickets.interface';
 import { UserPackageStatus } from '../types/DTO/user-package-status.interface';
 import { UserResponse } from '../types/DTO/users.interface';
-import { errorHandler, networkErrorStrategy } from './http-error-strategies';
+import {
+    errorHandler,
+    networkErrorStrategy,
+    unhandledExceptionStrategy,
+} from './http-error-strategies';
 import { CreateLeadType, LeadListItem } from '../types/DTO/lead.interface';
 
 const httpService = axios.create({
@@ -106,7 +110,7 @@ const httpService = axios.create({
         Accept: 'application/json',
         'Content-Type': 'multipart/form-data',
     },
-    // withCredentials: true,
+    // withCredentials حذف شد
 });
 
 httpService.interceptors.response.use(
@@ -123,9 +127,13 @@ httpService.interceptors.response.use(
                         ([key, value]) => toast.error(`${key}: ${value}`),
                     );
                 }
-                errorHandler[statusCode](errorData);
+                const handler =
+                    errorHandler[statusCode] || unhandledExceptionStrategy;
+                handler(errorData);
             }
         } else {
+            // نمایش پیام دقیق‌تر در صورت بروز خطای شبکه یا CORS
+            console.error('Network/CORS Error:', error?.message);
             networkErrorStrategy();
         }
     },
