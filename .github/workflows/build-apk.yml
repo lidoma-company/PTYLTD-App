@@ -17,6 +17,13 @@ jobs:
                   node-version: 22
 
             - name: Install dependencies & Build Next.js
+              env:
+                  NEXT_PUBLIC_BASE_URL: 'https://proactiveequitiesbackend.com:8443/api'
+                  NEXT_PUBLIC_FRONT_BASE_URL: 'https://proactiveequities.com.au'
+                  ACCESS_SECRET_KEY: '?]18Tvqb#C4/G_6z4PPRVw|2*#<Rfxhd9LbKyc}cHsk'
+                  NEXT_PUBLIC_STRIPE_PUBLIC_KEY: 'pk_test_51SuY63R2gfbsaUqzfV0FE0FLr4oUU4YM3Hl3fM8cGGgfYHhOHNAN8zgAM64t4eqy3dTzZZNXctAmxig1VqxuoBNm009S9cmc45'
+                  NEXT_PUBLIC_FB_PIXEL_ID: '1458671726025289'
+                  FB_PIXEL_ACCESS_TOKEN: 'EAAQNaQYVHUwBRvtBBuP9nm4d7Y3TbzE94izj1iAp9HmCuZB4JM0eJmHEzesWuz2gy4HJTpZAO6eV9HxKJh3YcZAlwKtXPRB4eJjgGKLUAZAI2p6WvcdVRXOeMHTPA2veiEZCzzJ6gxZCD5X64A2WVHWbMamDmdStRb86AssCn491XQKxZCchgsyEW7rcNpGYAZDZD'
               run: |
                   npm install
                   npm run build

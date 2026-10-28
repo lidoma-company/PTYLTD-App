@@ -10,7 +10,9 @@
         "orval": "orval --config ./src/utils/api/generated/orval.config.js",
         "test": "vitest --config vitest.config.ts",
         "test:ui": "vitest --ui",
-        "coverage": "vitest run --coverage"
+        "coverage": "vitest run --coverage",
+        "build:android": "npx cap sync android",
+        "generate-icon:android": "npx capacitor-assets generate --android"
     },
     "dependencies": {
         "@capacitor/android": "^8.5.3",
